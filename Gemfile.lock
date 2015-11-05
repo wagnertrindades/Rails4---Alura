@@ -86,6 +86,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-i18n (4.0.6)
+      i18n (~> 0.7)
+      railties (~> 4.0)
     railties (4.2.4)
       actionpack (= 4.2.4)
       activesupport (= 4.2.4)
@@ -117,6 +120,10 @@ PLATFORMS
 DEPENDENCIES
   jquery-rails
   rails (= 4.2.4)
+  rails-i18n (~> 4.0.0)
   sqlite3
   turbolinks
   twitter-bootstrap-rails
+
+BUNDLED WITH
+   1.10.6
