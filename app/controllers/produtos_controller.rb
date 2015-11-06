@@ -7,7 +7,7 @@ class ProdutosController < ApplicationController
 
 	def new
   		@produto = Produto.new
-  		@departamentos = Departamento.all
+  		renderiza_new
 	end
 
 	def create
@@ -17,8 +17,7 @@ class ProdutosController < ApplicationController
 			flash[:notice] = "Produto salvo com sucesso!"
 			redirect_to root_url
 		else
-			@departamentos = Departamento.all
-			render :new
+			renderiza_new
 		end
 	end
 
@@ -31,7 +30,7 @@ class ProdutosController < ApplicationController
 	def edit
 		id = params[:id]
 		@produto = Produto.find(id)
-		@departamentos = Departamento.all
+		renderiza_new
 	end
 
 	def update
@@ -42,8 +41,7 @@ class ProdutosController < ApplicationController
 			flash[:notice] = "Produto atualizado com sucesso!"
 			redirect_to root_url
 		else
-			@departamentos = Departamento.all
-			render :new
+			renderiza_new
 		end
 
 	end
@@ -51,5 +49,12 @@ class ProdutosController < ApplicationController
 	def busca
 		@nome_a_buscar = params[:nome]
 		@produtos = Produto.where "nome like ?", "%#{@nome_a_buscar}%"
+	end
+
+	private
+
+	def renderiza_new
+		@departamentos = Departamento.all
+		render :new
 	end
 end
