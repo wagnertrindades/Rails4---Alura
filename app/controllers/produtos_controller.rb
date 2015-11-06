@@ -27,6 +27,12 @@ class ProdutosController < ApplicationController
     	redirect_to root_url
 	end
 
+	def edit
+		id = params[:id]
+		@produto = Produto.find(id)
+		@departamentos = Departamento.all
+	end
+
 	def busca
 		@nome_a_buscar = params[:nome]
 		@produtos = Produto.where "nome like ?", "%#{@nome_a_buscar}%"
