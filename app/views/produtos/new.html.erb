@@ -14,6 +14,12 @@
 		<%= f.label :descricao %>
 		<%= f.text_area :descricao, class: "form-control", rows: 4 %>
 	</div>
+	
+	<div class="form-group">
+		<%= f.label :departamento %>
+		<%= f.collection_select :departamento_id, @departamentos, :id, :nome, {}, class: "form-control" %>
+	</div>
+
 	<div class="form-inline">
 		<div class="form-group">
 			<%= f.label :preco %>
