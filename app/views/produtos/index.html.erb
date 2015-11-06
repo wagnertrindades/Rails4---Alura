@@ -10,22 +10,10 @@
 			<th>Nome</th>
 			<th>Descrição</th>
 			<th>Preço</th>
-			<th>Quantidade</th>
 		</tr>
 	</thead>
 	<tbody>
-		<% @produtos_por_nome.each do |produto| %>
-			<tr>
-				<td><%= produto.nome %></td>
-				<td><%= produto.descricao %></td>
-				<td><%= produto.preco %></td>
-				<td><%= produto.quantidade %></td>
-				<td>
-					<%= button_to "Remover", produto, method: :delete, class: "btn btn-danger", 
-						data: { confirm: "Tem certeza que deseja remover #{produto.nome}?"} %>
-				</td>
-			</tr>
-		<% end %>
+		<%= render @produtos_por_nome %>
 	</tbody>
 </table>
 <table class="table table-bordered">
@@ -34,18 +22,10 @@
 			<th>Nome</th>
 			<th>Descrição</th>
 			<th>Preço</th>
-			<th>Quantidade</th>
 		</tr>
 	</thead>
 	<tbody>
-		<% @produtos_por_preco.each do |produto| %>
-			<tr>
-				<td><%= produto.nome %></td>
-				<td><%= produto.descricao %></td>
-				<td><%= produto.preco %></td>
-				<td><%= produto.quantidade %></td>
-			</tr>
-		<% end %>
+		<%= render @produtos_por_preco %>
 	</tbody>
 </table>
 
